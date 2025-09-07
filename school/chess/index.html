@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Project - Ammon Elzinga</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        .nav-home {
+            position: fixed;
+            top: 1rem;
+            left: 1rem;
+            padding: 0.5rem 1rem;
+            color: var(--text-dark);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
+        .nav-home:hover {
+            color: var(--accent-green);
+            transform: translateX(-2px);
+        }
+        .project-container {
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .project-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .project-header img {
+            width: 120px;
+            height: 120px;
+            margin-bottom: 1rem;
+        }
+        .github-link {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background-color: var(--subtle-green);
+            color: var(--text-dark);
+            text-decoration: none;
+            border-radius: 0.5rem;
+            transition: all 0.2s ease;
+            margin-top: 1rem;
+        }
+        .github-link:hover {
+            background-color: var(--accent-green);
+            transform: translateY(-2px);
+        }
+        .description {
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+    </style>
+</head>
+<body>
+    <a href="../../index.html" class="nav-home">
+        ← Back to Home
+    </a>
+    <header>
+        <h1>Chess Project</h1>
+        <p>A School Project Implementation</p>
+    </header>
+    <main>
+        <div class="project-container">
+            <div class="project-header">
+                <img src="../../images/chess-logo.png" alt="Chess Logo">
+            </div>
+            <section class="description">
+                <h2>Project Description</h2>
+                <p>
+                    This chess implementation was developed as a school project, demonstrating software engineering principles
+                    and game development concepts. The project showcases object-oriented programming, game state management,
+                    and user interface design.
+                </p>
+                <p>
+                    <a href="https://github.com/ammonelzinga/chess" class="github-link" target="_blank">View on GitHub</a>
+                </p>
+            </section>
+        </div>
+    </main>
+</body>
+</html>
