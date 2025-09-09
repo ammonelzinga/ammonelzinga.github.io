@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chess Project - Ammon Elzinga</title>
     <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="chess.css">
     <style>
         .nav-home {
             position: fixed;
@@ -55,6 +56,10 @@
             line-height: 1.6;
             color: var(--text-dark);
         }
+        .chess-container {
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
     </style>
 </head>
 <body>
@@ -73,15 +78,51 @@
             <section class="description">
                 <h2>Project Description</h2>
                 <p>
-                    This chess implementation was developed as a school project, demonstrating software engineering principles
-                    and game development concepts. The project showcases object-oriented programming, game state management,
-                    and user interface design.
+                    This chess implementation was developed as a school project. It featured live multiplayer functionality using Java Sockets, and a server-side component that managed game sessions using 
+                     a MySQL database on my local machine. Feel free to review the code and test it out locally by going to the Github shown below. Or, scroll down to enjoy a friendly chess game for yourself.
+                    Play against yourself or a friend.
                 </p>
                 <p>
                     <a href="https://github.com/ammonelzinga/chess" class="github-link" target="_blank">View on GitHub</a>
                 </p>
             </section>
+            
+            <section class="chess-container">
+                <h2>Interactive Chess Game</h2>
+                <p>Play chess below! Click on a piece to select it, then click on a highlighted square to make a move.</p>
+                
+                <div id="chess-board" class="chess-board"></div>
+                
+                <div class="game-controls">
+                    <button id="reset-button" class="button">Reset Game</button>
+                </div>
+                
+                <div class="game-info">
+                    <h3>Game Status</h3>
+                    <p id="game-status">WHITE's turn</p>
+                </div>
+                
+                <div class="move-history">
+                    <h3>Move History</h3>
+                    <ul id="move-history-list" class="move-history-list"></ul>
+                </div>
+            </section>
+            
+            <!-- Promotion Modal -->
+            <div id="promotion-modal" class="promotion-modal">
+                <div class="promotion-container">
+                    <h3>Choose a piece for promotion</h3>
+                    <div class="promotion-pieces">
+                        <div class="promotion-piece" data-piece="QUEEN">♛</div>
+                        <div class="promotion-piece" data-piece="ROOK">♜</div>
+                        <div class="promotion-piece" data-piece="BISHOP">♝</div>
+                        <div class="promotion-piece" data-piece="KNIGHT">♞</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
+    
+    <script src="chess.js"></script>
 </body>
 </html>
