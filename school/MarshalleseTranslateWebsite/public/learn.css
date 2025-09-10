@@ -1,0 +1,105 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-width: 375px;
+    background-color: rgb(244, 244, 244);
+}
+
+header{
+    flex: 0 80px;
+    z-index: 3;
+    padding-bottom: 15px; 
+}
+
+article{
+    padding-top: 20px;
+}
+main {
+    flex: 1 calc(100vh - 110px);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+
+input.question{
+    background-color: lightsalmon;
+    padding-right: 18px; 
+    padding-left: 18px; 
+    margin-right: 40px; 
+    padding-top: 5px; 
+    padding-bottom: 5px; 
+    border-radius: 10px 10px 10px 
+    }
+    
+    input.flip{
+        margin-top: 37px; 
+        background-color: lightgrey;
+        padding-right: 20px ;
+        padding-left: 20px; 
+        padding-top: 10px;
+        padding-bottom: 10px; 
+        border-radius: 10px 10px 10px; 
+    }
+    input.checkmark{
+        background-color: lightskyblue; 
+        padding-left: 18px;
+        padding-right: 18px; 
+        padding-top: 5px;
+        padding-bottom: 5px; 
+        border-radius: 10px 10px 10px; 
+    }
+    
+    label{
+        display:block;
+        padding-left: 80px;
+        padding-right: 80px;
+        width: 425px; 
+    }
+
+    menu{
+        flex: 1;
+        display: flex;
+        flex-direction: row !important;
+        list-style: none;
+    }
+    
+    
+    .navbar-brand {
+        padding-left: 0.3em;
+        border-bottom: solid rgb(182, 182, 182) thin;
+        align-items: center;
+    }
+    
+    menu .nav-item{
+       /* padding: 0 0.3 em; */
+        /* margi: 50px; */
+        padding-right: 50px;
+    
+    }
+    
+    /* div.onetothree{
+        display: none; 
+    } */
+    
+    /* #Hello_number {
+        background-color: lightgreen; 
+    } */
+    
+    @media (max-height: 600px){
+        header{
+            display: none;
+        }
+        footer{
+            display: none;
+        }
+        main {
+            flex: 1 100vh;
+            flex-direction: column;
+        }
+        menu .nav-item{
+            margin-left: 1px; 
+        }
+    }

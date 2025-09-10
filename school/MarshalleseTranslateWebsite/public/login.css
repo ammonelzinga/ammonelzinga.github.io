@@ -1,0 +1,91 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-width: 375px;
+    background-color: rgb(244, 244, 244);
+}
+
+header{
+    flex: 0 80px;
+    z-index: 3;
+    padding-bottom: 15px; 
+}
+
+/* article{
+    padding-top: 20px;
+} */
+
+main{
+    background-color: rgb(244,244,244);
+}
+main section:nth-child(1){
+    flex: 1 calc(100vh - 110px);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-size:55%; 
+    background-color:rgb(244, 244, 244);
+    padding: 220px; 
+
+}
+menu{
+    flex: 1;
+    display: flex;
+    flex-direction: row !important;
+    list-style: none;
+}
+
+#playerName{
+    background-color: tan; 
+    margin: 20px;  
+    padding: 5px; 
+}
+.navbar-brand {
+    padding-left: 0.3em;
+    border-bottom: solid rgb(182, 182, 182) thin;
+    align-items: center;
+}
+
+menu .nav-item{
+   /* padding: 0 0.3 em; */
+    /* margi: 50px; */
+    padding-right: 50px;
+
+}
+
+#playername{
+    background-color:rgb(244, 244, 244);
+    border-color:rgb(244, 244, 244);
+    padding: 15px; 
+}
+
+article{
+    background-color: rgb(244,244,244);
+    text-align: center;
+    /* position: fixed;  */
+}
+
+/* div.onetothree{
+    display: none; 
+} */
+
+/* #Hello_number {
+    background-color: lightgreen; 
+} */
+
+@media (max-height: 600px){
+    header{
+        display: none;
+    }
+    footer{
+        display: none; 
+    }
+    main {
+        flex: 1 100vh;
+        flex-direction: column;
+    }
+    menu .nav-item{
+        margin-left: 1px; 
+    }
+}

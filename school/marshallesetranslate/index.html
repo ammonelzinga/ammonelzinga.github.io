@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marshallese Translate Website - Ammon Elzinga</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        .nav-home {
+            position: fixed;
+            top: 1rem;
+            left: 1rem;
+            padding: 0.5rem 1rem;
+            color: var(--text-dark);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
+        .nav-home:hover {
+            color: var(--accent-green);
+            transform: translateX(-2px);
+        }
+        .project-container {
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .project-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .project-header h1 {
+            font-size: 2.5rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+        .github-link {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background-color: var(--subtle-green);
+            color: var(--text-dark);
+            text-decoration: none;
+            border-radius: 0.5rem;
+            transition: all 0.2s ease;
+            margin-top: 1rem;
+            font-weight: 600;
+        }
+        .github-link:hover {
+            background-color: var(--accent-green);
+            transform: translateY(-2px);
+        }
+        .nav-project-pages {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background-color: #4f8cff;
+            color: white;
+            text-decoration: none;
+            border-radius: 0.5rem;
+            transition: all 0.2s ease;
+            margin-top: 1rem;
+            font-weight: 600;
+            margin-left: 1rem;
+        }
+        .nav-project-pages:hover {
+            background-color: #357ae8;
+            transform: translateY(-2px);
+        }
+        .description {
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+    </style>
+</head>
+<body>
+    <a href="../../index.html" class="nav-home">
+        ← Back to Home
+    </a>
+    <header>
+        <h1>Marshallese Translate Website</h1>
+        <p>A School Project Implementation</p>
+    </header>
+    <main>
+        <div class="project-container">
+            <div class="project-header">
+                <h1>🌐 Marshallese Translate Website</h1>
+            </div>
+            <section class="description">
+                <h2>Project Description</h2>
+                <p>
+                    Back before Marshallese was available on Google Translate, I decided to create my own (extremely limited) translation tool.
+                    The Marshallese Translate website was my first website ever developed. 
+                    It featured a primitive English to Marshallese translator built from scratch.
+                    Other features included flash cards, account management, live chat with current users, and adding friends to see their progress with the flash cards.
+                    It was formerly hosted on AWS EC2, and used a MongoDB database. However, the site was removed and all server features including chat have been disabled.
+                    The application was built with HTML, CSS, JavaScript, and Node.js.
+                </p>
+                <p>
+                    <a href="https://github.com/ammonelzinga/MarshalleseTranslateWebsite" class="github-link" target="_blank">
+                        🔗 View on GitHub
+                    </a>
+                    <a href="/school/marshalleseTranslateWebsite/public/main.html" class="nav-project-pages">
+                        🌐 Go to Marshallese Translate
+                    </a>
+                </p>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

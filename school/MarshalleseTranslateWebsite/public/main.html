@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Home</title>
+        <link rel="stylesheet" href="main.css" />
+        <script src="main.js"></script>
+        <script src="mydictionary.js"></script>
+        <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+      
+    />
+
+    </head>
+    <body class="text-dark">
+    <header class="bg-secondary container-fluid fixed-top">
+        <nav class="navbar fixed-top navbar-light">
+          <a href="/school/marshallesetranslate" style="position: fixed; top: 1rem; left: 1rem; padding: 0.5rem 1rem; color: #222; text-decoration: none; background: #f8f9fa; border-radius: 0.5rem; font-weight: 600; z-index: 1000; box-shadow: 0 2px 8px #0001; transition: all 0.2s;">
+        ← Back to Project Overview
+      </a>
+          <menu class="navbar-light justify-content-center text-light">
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="main.html">MarshalleseTranslate</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="learn.html">Learn</a>
+                <li class="nav-item">
+                  <a class="nav-link" href="friends.html">Friends</a>
+                </li>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Sign in</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+              </li>
+            </menu>
+          </nav>
+          <br></br>
+        </header>
+    <article  class="container-fluid text-center">
+        <section>
+          <br><br></br>
+          <div>
+          <p> Welcome to MarshalleseTranslate! </p><p>Type an English word or phrase, and we'll do our best to translate it into Marshallese. Please visit <a href="https://marshallese.org/dictionary/">Marshallese.org</a>, or <a href="https://www.trussel2.com/MOD/MED2I.htm">Marshallese-English Dictionary</a>, for a more complete Marshallese dictionary.</p>
+          </div> </section> </article>
+    
+    <main class="container-fluid text-center" id="main_id">
+      <section id="friends_list" >
+          <table id="friends_list_id" > 
+            <thead>
+            <tr> 
+             <th> <button class="chat_toggle" id="chat_toggle_id" value="Chat" style="background-color: lightskyblue;" onclick="show_conversation()">Chat</button> </th>
+            </tr>
+            </thead>
+            <!-- <tr class="friends_list_chat" id="contact_list"> -->
+            <!-- <td> <br> </td> </tr> -->
+            <tbody class="friends_listtt" id="friends_listtt"></tbody>
+             <!-- <tr> <td> Bill </td></tr> -->
+             <!-- <tr>  <td>Jack</td> </tr> -->
+             <!-- <tr> <td>tommy</td> </tr> -->
+              </table>
+      </section>
+      <div id="conversation_page" style="display:none"> 
+      <section> 
+        <div id="chat-text"></div>
+  
+          <fieldset id="chat-controls" > 
+        <div>
+        <input class="type_conversation" id="new-msg" placeholder=". . . . ." type="text" /> </div> </fieldset>
+        </section>
+      </div>
+
+
+      <div id="translate_divison"> 
+      <section class ="english_box"> 
+          <label for="textarea">.</label>
+        <textarea id="textarea" name="varTextarea"  placeholder="Type Here..." ></textarea> 
+        </section><section class="translate_button"> 
+        <input type = "button" value = "Translate"   class="btn btn-primary bg-secondary" onclick = "marshallese_translate()" /> 
+       
+        </section>
+        <section class="marshallese_box">
+        <label for="textarea">.</label>
+          <textarea id="output" name="varTextarea" onkeydown="return false"> </textarea>
+        </section>
+        </section>
+        </div>
+      <!-- <section> -->
+      <!-- <div class="input-group"> -->
+            <!-- <div class="input-group input-group-lg"> -->
+            <!-- <span class="input-group-text" >English</span> -->
+        <!-- </div> -->
+        <!-- <textarea class="form-control" name="english" aria-label="With textarea"></textarea> -->
+      <!-- </section> -->
+      <!-- <section> -->
+        <!-- <div class="input-group"> -->
+            <!-- <div class="input-group-prepend"> -->
+            <!-- <span class="input-group-text" >Marshallese</span> -->
+        <!-- </div> -->
+        <!-- <textarea class="form-control" aria-label="With textarea"></textarea> -->
+      <!-- </section> -->
+    </main>
+</body>
+<script src="chatClient.js"></script>
+</html>

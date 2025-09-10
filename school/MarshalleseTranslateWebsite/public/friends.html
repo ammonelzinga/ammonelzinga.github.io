@@ -1,0 +1,104 @@
+!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Home</title>
+        <link rel="stylesheet" href="friends.css" />
+        <script src="friends.js"></script>
+        <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+      
+    />
+
+    </head>
+    <body class="text-dark bg-light" onload="show_accepted_friends()">
+    <a href="/school/marshallesetranslate" style="position: fixed; top: 1rem; left: 1rem; padding: 0.5rem 1rem; color: #222; text-decoration: none; background: #f8f9fa; border-radius: 0.5rem; font-weight: 600; z-index: 1000; box-shadow: 0 2px 8px #0001; transition: all 0.2s;">
+        ← Back to Project Overview
+      </a>
+      <header class="bg-secondary container-fluid fixed-top">
+        <nav class="navbar fixed-top navbar-light">
+          <menu class="navbar-light justify-content-center text-light">
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="main.html">MarshalleseTranslate</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="learn.html">Learn</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="friends.html">Friends</a>
+                  </li>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Sign in</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+              </li>
+            </menu>
+          </nav>
+          <br></br>
+        </header>
+        <br> 
+        <br> 
+        <br> 
+        <br>
+        <br> 
+
+<main class="bg-light">
+    <section> 
+        <span> <button class="btn btn-primary bg-primary"onclick="show_accepted_friends()">Update</button> </span>
+    <table class="table table-warning table-striped-columns">
+        <thead class="table-secondary">
+          <tr>
+            <th>Your Friends</th>
+            <th>Score</th>
+          </tr>
+          <!-- <tr> 
+            <td id="table_name"> </td>
+            <td id="table_score"></td></tr> -->
+        </thead>
+        <tbody id="accepted_friends" class="accepted_friends"></tbody>
+      </table>
+      </section>
+
+      <section> 
+        <span> <button class="btn btn-primary bg-primary"onclick="receive_friends_list()">Update</button> </span>
+        <table class="table table-warning table-striped-columns">
+            <thead class="table-secondary">
+              <tr>
+                <th>Requests</th>
+                <th>Status</th>
+              </tr>
+              <!-- <tr> 
+                <td id="table_name"> </td>
+                <td id="table_score"></td></tr> -->
+            </thead>
+            <tbody class = "friends_status" id = "friends_status"> 
+               
+                    <!-- <td> Ammon</td>  -->
+                    <!-- <td><button class = "btn btn-primary bg-success" onclick="receive_friends_list()">Accept</button></td> -->
+              
+            </tbody>
+          </table>
+          </section>
+
+      <section> 
+        <p> Search and request new friends </p>
+        <input id="search_friends" type="text"></input> 
+        <span> <button class=" btn btn-primary bg-primary" onclick="add_friend()">Search</button></span>
+        <div> 
+            <br> 
+            <br> 
+        <p id = "found_friend"></p>
+        <span> <button class=" btn btn-primary bg-primary" id="request_button"  onclick="request_friend()">Request</button></span></div>
+    </section>
+
+
+</main>
+</body>
+        </html>
+

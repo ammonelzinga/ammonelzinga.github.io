@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Home</title>
+        <link rel="stylesheet" href="learn.css" />
+        
+        <!-- <script src="login.js"></script> -->
+        <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      
+      crossorigin="anonymous"
+      
+    />
+  
+    </head>
+    <body class="bg-secondary text-dark "  onload="data()">
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+      <a href="/school/marshallesetranslate" style="position: fixed; top: 1rem; left: 1rem; padding: 0.5rem 1rem; color: #222; text-decoration: none; background: #f8f9fa; border-radius: 0.5rem; font-weight: 600; z-index: 1000; box-shadow: 0 2px 8px #0001; transition: all 0.2s;">
+        ← Back to Project Overview
+      </a>
+      <header class="container-fluid bg-secondary">
+      <nav class="bg-secondary navbar fixed-top navbar-light">
+        <menu class=" bg-secondary navbar-light justify-content-center text-light">
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="main.html">MarshalleseTranslate</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="learn.html">Learn</a>
+              <li class="nav-item">
+                <a class="nav-link" href="friends.html">Friends</a>
+              </li>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Sign in</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+          </menu>
+        </nav>
+      </header>
+  <subheader class="container-fluid bg-light text-left">
+  
+  <div class ="player-name" id="player-name"></div>
+  <br> 
+  
+  <div id="player-score" class="player-score"></div>
+  <br> 
+  <p>
+    <a class="btn btn-primary bg-success" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" onclick="loadScores()">
+      Leaderboard
+    </a>
+    <span> <button class="btn btn-primary bg-warning" onclick="testendpoint()">Save</button> </span>
+  </p>
+  <div class="collapse" id="collapseExample">
+    <div class="card card-body">
+      <table class="table table-warning table-striped-columns">
+        <thead class="table-secondary">
+          <tr>
+            <th>Name</th>
+            <th>Score</th>
+          </tr>
+          <!-- <tr> 
+            <td id="table_name"> </td>
+            <td id="table_score"></td></tr> -->
+        </thead>
+        <tbody id="scores"></tbody>
+      </table>
+    </div>
+  </div>
+</subheader>
+        <main class="container-fluid bg-light text-center">
+          <!-- This next line has an important link to allow for bootstrap dropdown features. -->
+          <button type="button" class="btn btn-success" onclick="return_back()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+          </svg>  Go Back</button>
+
+          <div id ="oneofthree" class="onetothree"> 
+          <div class="card bg-light mb-3" style="width: 17rem; height: 20rem;" >
+            <div id = "Hello_number" class="card-header" value="0" >1/7</div>
+            <div class="card-body">
+              <h5 id = "Hello_title" class="card-title">Yokwe</h5>
+              <br>
+              <p id = "Hello_par" class="card-text">Yokwe, ej et am mour?</p>
+              <br> 
+              <input type = "button" value = "Flip" class="flip" onclick = "hello_flip_card()"/> 
+            </div>
+          </div>
+          <input type = "button" value = "?" class="question" onclick = "question(document.getElementById('Hello_number').id, 'first')"/>
+          <input type = "button" value = "&#x2713;" class="checkmark" onclick = "check_off(document.getElementById('Hello_number').id, 'first')"/>
+          </div>
+      
+          <div id ="twoofthree" class="onetothree"> 
+          <div class="card bg-light mb-3" style="width: 17rem; height: 20rem;">
+            <div id = "Thanks_number" class="card-header" value="0">2/7</div>
+            <div class="card-body">
+              <h5 id = "Thanks_title" class="card-title">Komool</h5>
+              <br>
+              <p id = "Thanks_par" class="card-text">komooltata kon mona eo :</p>
+              <br> 
+              <input type = "button" value = "Flip" class="flip" onclick = "thanks_flip_card()"/> 
+            </div>
+          </div>
+          <input type = "button" value = "?" class="question"onclick = "question(document.getElementById('Thanks_number').id, 'second')"/>
+          <input type = "button" value = "&#x2713;" class="checkmark" onclick = "check_off(document.getElementById('Thanks_number').id, 'second')"/>
+          </div>
+
+          <div id="threeofthree" class="onetothree">
+          <div class="card bg-light mb-3" style="width: 17rem; height: 20rem;">
+            <div id = "Today_number" class="card-header" value="0">3/7</div>
+            <div class="card-body">
+              <h5 id = "Today_title" class="card-title">Rainin</h5>
+              <br>
+              <p id = "Today_par" class="card-text">Ej juon raan aiboojoj rainin</p>
+              <br> 
+              <input type = "button" value = "Flip" class="flip" onclick = "today_flip_card()"/> 
+            </div>
+          </div>
+          <input type = "button" value = "?" class="question" onclick = "question(document.getElementById('Today_number').id, 'third')"/>
+          <input type = "button" value = "&#x2713;" class="checkmark" onclick = "check_off(document.getElementById('Today_number').id, 'third')"/>
+          </div>
+            </div>
+          </div>
+
+          <div id="fourofsix" class="fourtosix" style="display: none">
+            <div class="card bg-light mb-3" style="width: 17rem; height: 20rem;">
+              <div id = "Monono_number" class="card-header" value="0">4/6</div>
+              <div class="card-body">
+                <h5 id = "Monono_title" class="card-title">Monono</h5>
+                <br>
+                <p id = "Monono_par" class="card-text">Naij lukkuun monono</p>
+                <br> 
+                <input type = "button" value = "Flip" class="flip" onclick = "monono_flip_card()"/> 
+              </div>
+            </div>
+            <input type = "button" value = "?" class="question" onclick = "question(document.getElementById('Monono_number').id, 'fourth')"/>
+            <input type = "button" value = "&#x2713;" class="checkmark" onclick = "check_off(document.getElementById('Monono_number').id, 'fourth')"/>
+            </div>
+              </div>
+            </div>
+
+            <div id="fiveofsix" class="fourtosix" style="display: none">
+              <div class="card bg-light mb-3" style="width: 17rem; height: 20rem;">
+                <div id = "Emman_number" class="card-header" value="0">5/6</div>
+                <div class="card-body">
+                  <h5 id = "Emman_title" class="card-title">Emman</h5>
+                  <br>
+                  <p id = "Emman_par" class="card-text">Emman ao mour</p>
+                  <br> 
+                  <input type = "button" value = "Flip" class="flip" onclick = "emman_flip_card()"/> 
+                </div>
+              </div>
+              <input type = "button" value = "?" class="question" onclick = "question(document.getElementById('Emman_number').id, 'fifth')"/>
+              <input type = "button" value = "&#x2713;" class="checkmark" onclick = "check_off(document.getElementById('Emman_number').id, 'fifth')"/>
+              </div>
+                </div>
+              </div>
+
+              <div id="sixofsix" class="fourtosix" style="display: none">
+                <div class="card bg-light mb-3" style="width: 17rem; height: 20rem;">
+                  <div id = "Buromoj_number" class="card-header" value="0">6/6</div>
+                  <div class="card-body">
+                    <h5 id = "Buromoj_title" class="card-title">Buromoj</h5>
+                    <br>
+                    <p id = "Buromoj_par" class="card-text">Naij enjake buromoj</p>
+                    <br> 
+                    <input type = "button" value = "Flip" class="flip" onclick = "buromoj_flip_card()"/> 
+                  </div>
+                </div>
+                <input type = "button" value = "?" class="question" onclick = "question(document.getElementById('Buromoj_number').id, 'sixth')"/>
+                <input type = "button" value = "&#x2713;" class="checkmark" onclick = "check_off(document.getElementById('Buromoj_number').id, 'sixth')"/>
+                </div>
+                  </div>
+                </div>
+
+          <button type="button" class="btn btn-success" onclick ="continue_on()">Continue  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+          </svg> </button>
+           </main>
+           <script src="learn.js"></script>
+           <!-- <script src="index.js"></script> -->
+          </body>
+          </html>
+
+           
