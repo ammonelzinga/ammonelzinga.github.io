@@ -8,14 +8,31 @@
 </head>
 <body>
     <a href="/" style="position: fixed; top: 1rem; left: 1rem; padding: 0.5rem 1rem; color: #222; text-decoration: none; background: #f8f9fa; border-radius: 0.5rem; font-weight: 600; z-index: 1000; box-shadow: 0 2px 8px #0001; transition: all 0.2s;">← Back to Home</a>
+    <style>
+        .progress-bar { width: 100%; background: #eee; border-radius: 0.5rem; margin: 1.5rem 0 1.5rem 0; height: 1.5rem; box-shadow: 0 2px 8px #0001; }
+        .progress-bar-fill { height: 100%; width: 50%; background: linear-gradient(90deg, #4f8cff 0%, #4caf50 100%); border-radius: 0.5rem; text-align: right; color: #fff; font-weight: bold; font-size: 1rem; line-height: 1.5rem; padding-right: 0.5rem; transition: width 0.3s; }
+    </style>
     <main style="max-width: 600px; margin: 4rem auto 2rem auto; padding: 2rem; background: #fff; border-radius: 1rem; box-shadow: 0 2px 16px #0001;">
-        <h1>Tortilla Thyme</h1>
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+            <h1 style="margin-bottom: 0;">Tortilla Thyme</h1>
+            <a href="https://tortillathyme.xyz/" target="_blank" style="margin-left: 1rem; padding: 0.75rem 1.5rem; background: #4caf50; color: #fff; border-radius: 0.5rem; font-weight: bold; text-decoration: none; box-shadow: 0 2px 8px #0002; transition: background 0.2s; white-space: nowrap;">Visit Tortilla Thyme</a>
+        </div>
+        <div class="progress-bar"><div class="progress-bar-fill">50%</div></div>
         <p>Tortilla Thyme is a site to share recipes with family and friends, create quick grocery lists, and extract recipes from popular sites. Whether you want to save your favorite meals, plan your next shopping trip, or discover new recipes, Tortilla Thyme makes it easy and fun!</p>
         <ul>
             <li>Share and organize recipes with loved ones</li>
             <li>Generate grocery lists from your recipes</li>
             <li>Extract and save recipes from popular websites</li>
         </ul>
+        <div style="margin-top: 2rem;">
+            <strong>To Do:</strong>
+            <ul>
+                <li>Avoid duplicating recipes when editing</li>
+                <li>Fix groups</li>
+                <li>Enhance mobile usability</li>
+                <li>Connect to grocery store's API for automatic cart insertions</li>
+            </ul>
+        </div>
         <div style="margin-top: 1.5rem;">
             <strong>Built with:</strong>
             <ul style="margin: 0.5rem 0 0 1.5rem;">

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Writing Comparator</title>
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        .progress-bar {
+            width: 100%;
+            background: #eee;
+            border-radius: 0.5rem;
+            margin: 2rem 0 1.5rem 0;
+            height: 1.5rem;
+            box-shadow: 0 2px 8px #0001;
+        }
+        .progress-bar-fill {
+            height: 100%;
+            width: 10%;
+            background: linear-gradient(90deg, #4f8cff 0%, #4caf50 100%);
+            border-radius: 0.5rem;
+            text-align: right;
+            color: #fff;
+            font-weight: bold;
+            font-size: 1rem;
+            line-height: 1.5rem;
+            padding-right: 0.5rem;
+            transition: width 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <a href="/" style="position: fixed; top: 1rem; left: 1rem; padding: 0.5rem 1rem; color: #222; text-decoration: none; background: #f8f9fa; border-radius: 0.5rem; font-weight: 600; z-index: 1000; box-shadow: 0 2px 8px #0001; transition: all 0.2s;">← Back to Home</a>
+    <main style="max-width: 650px; margin: 4rem auto 2rem auto; padding: 2rem; background: #fff; border-radius: 1rem; box-shadow: 0 2px 16px #0001;">
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+            <h1 style="margin-bottom: 0;">Writing Comparator</h1>
+            <a href="https://writingcomparator.vercel.app/" target="_blank" style="margin-left: 1rem; padding: 0.75rem 1.5rem; background: #4f8cff; color: #fff; border-radius: 0.5rem; font-weight: bold; text-decoration: none; box-shadow: 0 2px 8px #0002; transition: background 0.2s; white-space: nowrap;">Visit Writing Comparator</a>
+        </div>
+        <div class="progress-bar">
+            <div class="progress-bar-fill">10%</div>
+        </div>
+        <p>This website is an ongoing project to organize sacred texts, compare and contrast texts by asking questions and having AI determine a correct SQL selection statement, and then summarize the results. Uses AI (OpenAI API), Postgres (via Supabase), and embeddings for semantic search and comparison.</p>
+        <ul>
+            <li>Organize and upload sacred texts and documents</li>
+            <li>Ask questions to compare and contrast texts</li>
+            <li>AI generates SQL selection statements to retrieve relevant passages</li>
+            <li>Summarizes results using AI</li>
+            <li>Built with Supabase, OpenAI API, and embeddings</li>
+        </ul>
+        <a href="https://writingcomparator.vercel.app/" target="_blank" style="display: inline-block; margin-top: 2rem; padding: 0.75rem 1.5rem; background: #4f8cff; color: #fff; border-radius: 0.5rem; font-weight: bold; text-decoration: none; box-shadow: 0 2px 8px #0002; transition: background 0.2s;">Visit Writing Comparator</a>
+        <div style="margin-top: 2.5rem;">
+            <strong>To Do:</strong>
+            <ul>
+                <li>UX Design</li>
+                <li>Upload documents</li>
+                <li>Enhance AI prompting</li>
+                <li>Cache results</li>
+            </ul>
+        </div>
+    </main>
+</body>
+</html>
