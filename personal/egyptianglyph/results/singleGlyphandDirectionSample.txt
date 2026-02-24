@@ -1,0 +1,51 @@
+1. 
+
+Input: ./images/sample9_A1.png
+Output: Face-direction vote details:
+  A1: left=1.000 right=0.000
+Direction: left-to-right
+Top-3 sequences:
+  A1  (1.0000)
+  A2  (0.0000)
+  A9  (0.0000)
+
+2.
+
+Input: ./images/a2_29.jpg
+Output: Face-direction vote details:
+  A2: left=0.000 right=1.000
+Direction: right-to-left
+Top-3 sequences:
+  A2  (1.0000)
+  N12  (0.0000)
+  A17  (0.0000)
+
+3. 
+
+Input: ./images/sample9_A1.png
+Output: Face-direction vote details:
+  E4: left=0.000 right=1.000
+Direction: right-to-left
+Top-3 sequences:
+  E4  (1.0000)
+  U15  (0.0000)
+  F1  (0.0000)
+
+
+4. 
+
+Input: ./images/l1_1.png
+Output: Direction: unspecified
+Top-3 sequences:
+  L1  (1.0000)
+  N42  (0.0000)
+  N33  (0.0000)
+
+5. 
+
+Input: ./images/o1_11.jpg
+Output: Direction: unspecified
+Top-3 sequences:
+  O1  (1.0000)
+  O4  (0.0000)
+  D54  (0.0000)

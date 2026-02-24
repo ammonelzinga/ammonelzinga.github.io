@@ -1,0 +1,5 @@
+Direction: unspecified
+Top-3 sequences:
+  L1  (1.0000)
+  N42  (0.0000)
+  N33  (0.0000)

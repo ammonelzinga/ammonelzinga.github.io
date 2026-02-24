@@ -1,0 +1,7 @@
+ Face-direction vote details:
+  E4: left=0.000 right=1.000
+Direction: right-to-left
+Top-3 sequences:
+  E4  (1.0000)
+  U15  (0.0000)
+  F1  (0.0000)

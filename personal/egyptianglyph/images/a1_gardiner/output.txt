@@ -1,0 +1,7 @@
+Face-direction vote details:
+  A1: left=1.000 right=0.000
+Direction: left-to-right
+Top-3 sequences:
+  A1  (1.0000)
+  A2  (0.0000)
+  A9  (0.0000)

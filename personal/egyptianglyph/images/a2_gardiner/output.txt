@@ -1,0 +1,7 @@
+Output: Face-direction vote details:
+  A2: left=0.000 right=1.000
+Direction: right-to-left
+Top-3 sequences:
+  A2  (1.0000)
+  N12  (0.0000)
+  A17  (0.0000)

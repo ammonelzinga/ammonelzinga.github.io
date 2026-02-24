@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Egyptian Hieroglyph Recognizer</title>
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        .results-grid {
+            display: grid;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .result-row {
+            border: 1px solid #eaeaea;
+            border-radius: 0.75rem;
+            padding: 1rem;
+            background: #fafafa;
+        }
+
+        .row-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .status-pill {
+            background: #e8f5e9;
+            color: #1b5e20;
+            padding: 0.3rem 0.65rem;
+            border-radius: 999px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .row-content {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 0.9rem;
+        }
+
+        .card {
+            background: #fff;
+            border: 1px solid #eaeaea;
+            border-radius: 0.65rem;
+            padding: 0.65rem;
+        }
+
+        .card h4 {
+            margin: 0 0 0.55rem 0;
+            font-size: 0.95rem;
+        }
+
+        .card img {
+            width: 100%;
+            height: 210px;
+            object-fit: contain;
+            background: #f4f6f8;
+            border-radius: 0.45rem;
+            border: 1px solid #eef0f2;
+        }
+
+        .output-box {
+            margin: 0;
+            white-space: pre-wrap;
+            font-size: 0.85rem;
+            line-height: 1.35;
+            background: #f7f9fb;
+            border: 1px solid #e9edf2;
+            border-radius: 0.45rem;
+            padding: 0.65rem;
+            min-height: 210px;
+        }
+
+        @media (max-width: 900px) {
+            .row-content {
+                grid-template-columns: 1fr;
+            }
+
+            .card img,
+            .output-box {
+                min-height: 0;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="/" style="position: fixed; top: 1rem; left: 1rem; padding: 0.5rem 1rem; color: #222; text-decoration: none; background: #f8f9fa; border-radius: 0.5rem; font-weight: 600; z-index: 1000; box-shadow: 0 2px 8px #0001; transition: all 0.2s;">← Back to Home</a>
+
+    <main style="max-width: 700px; margin: 4rem auto 2rem auto; padding: 2rem; background: #fff; border-radius: 1rem; box-shadow: 0 2px 16px #0001;">
+        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+            <h1 style="margin-bottom: 0;">Egyptian Hieroglyph Recognizer</h1>
+            <a href="https://github.com/ammonelzinga/egyptianGlyphPredictor" target="_blank" style="padding: 0.75rem 1.5rem; background: #4f8cff; color: #fff; border-radius: 0.5rem; font-weight: bold; text-decoration: none; box-shadow: 0 2px 8px #0002; white-space: nowrap;">View GitHub Project</a>
+        </div>
+
+        <p style="margin-top: 1.25rem;"><strong>Status:</strong> About 25% done.</p>
+
+        <p>This project uses deep learning to read images of Egyptian hieroglyphs. The goal is to identify each symbol by Gardiner code, infer reading direction when needed, and eventually produce likely English interpretations from glyph sequences.</p>
+
+        <h3 style="margin-top: 2rem;">Current Model Plan</h3>
+        <ul>
+            <li><strong>Glyph localization:</strong> YOLO object detection to find glyph boundaries in an image.</li>
+            <li><strong>Glyph classification:</strong> ResNet-18 model to predict the most likely Gardiner sign for each detected glyph.</li>
+            <li><strong>Direction detection:</strong> Binary ResNet-18 model to determine left/right orientation for direction-sensitive signs.</li>
+            <li><strong>Sequence interpretation:</strong> Planned sequence/transformer-style model for probable English outputs.</li>
+        </ul>
+
+        <h3 style="margin-top: 2rem;">Milestones Completed</h3>
+        <ul>
+            <li>Recognize the Gardiner sign based on a picture of a hieroglyph.</li>
+            <li>Recognize the correct direction when applicable.</li>
+        </ul>
+
+        <h3 style="margin-top: 2rem;">Milestones Remaining</h3>
+        <ul>
+            <li>Train and evaluate the YOLO detector on labeled bounding-box data.</li>
+            <li>Expand training data and improve robustness across writing styles and image quality.</li>
+            <li>Combine detection + classification + direction into a single end-to-end pipeline.</li>
+            <li>Build the translation stage for glyph sequence to likely English meanings.</li>
+            <li>Define and track final performance targets (detection overlap and full-pipeline accuracy).</li>
+        </ul>
+
+        <h3 style="margin-top: 2rem;">Data and Evaluation Snapshot</h3>
+        <p>The training data comes from open hieroglyph datasets (including sources from GitHub and Hugging Face), with additional manual box labeling planned for a subset. Model training uses a train/validation split, weighted cross-entropy for class imbalance, and Adam optimization.</p>
+
+        <h3 style="margin-top: 2rem;">Sample Results by Gardiner Folder</h3>
+        <p>Each row below uses one folder from the project: a Wikipedia screenshot example, one model input image, and the output text produced for that test.</p>
+
+        <div class="results-grid">
+            <div class="result-row">
+                <div class="row-header">
+                    <strong>A1 Folder</strong>
+                    <span class="status-pill">Correct prediction</span>
+                </div>
+                <div class="row-content">
+                    <div class="card">
+                        <h4>Wikipedia Example</h4>
+                        <img src="/personal/egyptianglyph/images/a1_gardiner/Screenshot 2026-02-23 215649.png" alt="A1 Gardiner Wikipedia example">
+                    </div>
+                    <div class="card">
+                        <h4>Model Input</h4>
+                        <img src="/personal/egyptianglyph/images/a1_gardiner/sample9_A1.png" alt="A1 model input image">
+                    </div>
+                    <div class="card">
+                        <h4>output.txt</h4>
+                        <pre class="output-box">Face-direction vote details:
+  A1: left=1.000 right=0.000
+Direction: left-to-right
+Top-3 sequences:
+  A1  (1.0000)
+  A2  (0.0000)
+  A9  (0.0000)</pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="result-row">
+                <div class="row-header">
+                    <strong>A2 Folder</strong>
+                    <span class="status-pill">Correct prediction</span>
+                </div>
+                <div class="row-content">
+                    <div class="card">
+                        <h4>Wikipedia Example</h4>
+                        <img src="/personal/egyptianglyph/images/a2_gardiner/Screenshot 2026-02-23 215937.png" alt="A2 Gardiner Wikipedia example">
+                    </div>
+                    <div class="card">
+                        <h4>Model Input</h4>
+                        <img src="/personal/egyptianglyph/images/a2_gardiner/a2_29.jpg" alt="A2 model input image">
+                    </div>
+                    <div class="card">
+                        <h4>output.txt</h4>
+                        <pre class="output-box">Output: Face-direction vote details:
+  A2: left=0.000 right=1.000
+Direction: right-to-left
+Top-3 sequences:
+  A2  (1.0000)
+  N12  (0.0000)
+  A17  (0.0000)</pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="result-row">
+                <div class="row-header">
+                    <strong>E4 Folder</strong>
+                    <span class="status-pill">Correct prediction</span>
+                </div>
+                <div class="row-content">
+                    <div class="card">
+                        <h4>Wikipedia Example</h4>
+                        <img src="/personal/egyptianglyph/images/e4_gardiner/Screenshot 2026-02-23 215722.png" alt="E4 Gardiner Wikipedia example">
+                    </div>
+                    <div class="card">
+                        <h4>Model Input</h4>
+                        <img src="/personal/egyptianglyph/images/e4_gardiner/e4_1.png" alt="E4 model input image">
+                    </div>
+                    <div class="card">
+                        <h4>output.txt</h4>
+                        <pre class="output-box">Face-direction vote details:
+  E4: left=0.000 right=1.000
+Direction: right-to-left
+Top-3 sequences:
+  E4  (1.0000)
+  U15  (0.0000)
+  F1  (0.0000)</pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="result-row">
+                <div class="row-header">
+                    <strong>L1 Folder</strong>
+                    <span class="status-pill">Correct prediction</span>
+                </div>
+                <div class="row-content">
+                    <div class="card">
+                        <h4>Wikipedia Example</h4>
+                        <img src="/personal/egyptianglyph/images/l1_gardiner/Screenshot 2026-02-23 215754.png" alt="L1 Gardiner Wikipedia example">
+                    </div>
+                    <div class="card">
+                        <h4>Model Input</h4>
+                        <img src="/personal/egyptianglyph/images/l1_gardiner/l1_1.png" alt="L1 model input image">
+                    </div>
+                    <div class="card">
+                        <h4>output.txt</h4>
+                        <pre class="output-box">Direction: unspecified
+Top-3 sequences:
+  L1  (1.0000)
+  N42  (0.0000)
+  N33  (0.0000)</pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="result-row">
+                <div class="row-header">
+                    <strong>O1 Folder</strong>
+                    <span class="status-pill">Correct prediction</span>
+                </div>
+                <div class="row-content">
+                    <div class="card">
+                        <h4>Wikipedia Example</h4>
+                        <img src="/personal/egyptianglyph/images/o1_gardiner/Screenshot 2026-02-23 215814.png" alt="O1 Gardiner Wikipedia example">
+                    </div>
+                    <div class="card">
+                        <h4>Model Input</h4>
+                        <img src="/personal/egyptianglyph/images/o1_gardiner/o1_11.jpg" alt="O1 model input image">
+                    </div>
+                    <div class="card">
+                        <h4>output.txt</h4>
+                        <pre class="output-box">Direction: unspecified
+Top-3 sequences:
+  O1  (1.0000)
+  O4  (0.0000)
+  D54  (0.0000)</pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,5 @@
+Direction: unspecified
+Top-3 sequences:
+  O1  (1.0000)
+  O4  (0.0000)
+  D54  (0.0000)
